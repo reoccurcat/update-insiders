@@ -6,7 +6,7 @@ YELLOW='\033[1;33m'
 PURPLE='\033[1;35m'
 NC='\033[0m'
 printf "${PURPLE}                _      _           _         _    _            \n  _  _ _ __  __| |__ _| |_ ___ ___(_)_ _  __(_)__| |___ _ _ ___\n | || | '_ \/ _\` / _\` |  _/ -_)___| | ' \(_-< / _\` / -_) '_(_-<\n  \_,_| .__/\__,_\__,_|\__\___|   |_|_||_/__/_\__,_\___|_| /__/\n      |_|        \n${NC}"
-printf '${LBLUE}(C) reoccurcat 2021-present using the GNU GPL v3 License${NC}\n\n'
+printf "${LBLUE}(C) reoccurcat 2021-present using the GNU GPL v3 License${NC}\n\n"
 printf "Getting ${YELLOW}SUDO${NC} access...\n"
 sudo printf "${GREEN}Achieved!${NC}\n"
 if [ $? -gt 0 ]; then
