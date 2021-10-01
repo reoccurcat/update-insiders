@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Visual Studio Code Insiders
+Comment=Visual Studio Code Insiders
+Exec=/usr/share/vscode-insiders/bin/code-insiders
+Icon=/usr/share/vscode-insiders/resources/app/resources/linux/code.png
+Terminal=false
+Type=Application
+Categories=Development;
+
