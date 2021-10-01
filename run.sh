@@ -13,6 +13,7 @@ echo "$ pgrep -f 'code-insiders' >> /dev/null"
 pgrep -f 'code-insiders' >> /dev/null
 if [ $? -eq 0 ]; then
     echo -e "${BLUE}Insider instances running, killing...${NC}"
+    echo "$ pkill -e -f 'code-insiders'"
     pkill -e -f 'code-insiders'
     if [ $? -gt 0 ]; then
         echo -e "${RED}Failed to kill processes. ATTEMTING AS ROOT.${NC}"
