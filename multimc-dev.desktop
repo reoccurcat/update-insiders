@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=MultiMC Development
+GenericName=Minecraft Launcher
+Comment=Free, open source launcher and instance manager for Minecraft.
+Type=Application
+Terminal=false
+Exec=/usr/share/multimc-dev/MultiMC
+Icon=multimc
+Categories=Game
+Keywords=game;minecraft;

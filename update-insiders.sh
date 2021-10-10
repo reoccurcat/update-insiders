@@ -86,13 +86,13 @@ sudo cp ./code-insiders.desktop /usr/share/applications/code-insiders.desktop
 echo '$ grep -Fxq "alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders" ~/.bashrc'
 grep -Fxq "alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders" ~/.bashrc
 if [ $? -eq 1 ]; then
-echo -e "${BLUE}Alias not created, creating now...${NC}"
-echo "$ echo 'alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders' >> ~/.bashrc"
-echo 'alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders' >> ~/.bashrc
-echo '$ source ~/.bashrc'
-source ~/.bashrc
+    echo -e "${BLUE}Alias not created, creating now...${NC}"
+    echo "$ echo 'alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders' >> ~/.bashrc"
+    echo 'alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders' >> ~/.bashrc
+    echo '$ source ~/.bashrc'
+    source ~/.bashrc
 else
-echo -e "${BLUE}Alias already found, skipping...${NC}"
+    echo -e "${BLUE}Alias already found, skipping...${NC}"
 fi
 printf "${GREEN}All done! Check your application menu! You can also run 'code-insiders' to start it.${NC}\n"
 exit
