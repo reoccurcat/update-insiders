@@ -5,8 +5,12 @@ LBLUE='\033[1;34m'
 YELLOW='\033[1;33m'
 PURPLE='\033[1;35m'
 NC='\033[0m'
-printf "${PURPLE}                _      _                     _ _   _          \n  _  _ _ __  __| |__ _| |_ ___ ___ _ __ _  _| | |_(_)_ __  __ \n | || | '_ \/ _\` / _\` |  _/ -_)___| '  \ || | |  _| | '  \/ _|\n  \_,_| .__/\__,_\__,_|\__\___|   |_|_|_\_,_|_|\__|_|_|_|_\__|\n      |_|${NC}\n\n"
+printf "${PURPLE}  _         _        _ _               _ _   _          \n (_)_ _  __| |_ __ _| | |___ _ __ _  _| | |_(_)_ __  __ \n | | ' \(_-<  _/ _\` | | |___| '  \ || | |  _| | '  \/ _|\n |_|_||_/__/\__\__,_|_|_|   |_|_|_\_,_|_|\__|_|_|_|_\__|${NC}\n\n"
 printf "${LBLUE}(C) reoccurcat 2021-present using the GNU GPL v3 License${NC}\n\n"
+if [[ -d "/usr/share/multimc-dev" ]]; then
+    printf "${YELLOW}You already have MultiMC installed.\nIf you want to update it, please use the MultiMC application.\n${NC}"
+    exit
+fi
 printf "Getting ${YELLOW}SUDO${NC} access...\n"
 sudo printf "${GREEN}Achieved!${NC}\n"
 if [ $? -gt 0 ]; then
