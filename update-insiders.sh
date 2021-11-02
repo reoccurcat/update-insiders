@@ -6,6 +6,7 @@ LBLUE='\033[1;34m'
 YELLOW='\033[1;33m'
 PURPLE='\033[1;35m'
 NC='\033[0m'
+quiet='false'
 printf "${PURPLE}                _      _           _         _    _            \n  _  _ _ __  __| |__ _| |_ ___ ___(_)_ _  __(_)__| |___ _ _ ___\n | || | '_ \/ _\` / _\` |  _/ -_)___| | ' \(_-< / _\` / -_) '_(_-<\n  \_,_| .__/\__,_\__,_|\__\___|   |_|_||_/__/_\__,_\___|_| /__/\n      |_|        \n${NC}"
 printf "${LBLUE}(C) reoccurcat 2021-present using the GNU GPL v3 License${NC}\n\n"
 print_usage() {
@@ -18,7 +19,7 @@ while getopts 'hq' flag; do
     h) print_usage ;;
   esac
 done
-if [ $quiet = 'true' ]; then
+if [ $quiet == 'true' ]; then
   sudo echo >> /dev/null
   if [ $? -gt 0 ]; then
       echo -e "${RED}Failed to get sudo access. Please rerun the script.${NC}"
