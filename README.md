@@ -1,10 +1,10 @@
 # update scripts
 
 ## install-multimc.sh
-a shell script that will install multimc development edition into /usr/share
+a shell script that will install multimc development edition into /opt
 
 ## update-insiders.sh
-a shell script that will install/update vscode insiders into /usr/share
+a shell script that will install/update vscode insiders into /opt
 
 ### Running
 The script automatically assumes you have `tar` and `wget`. 
