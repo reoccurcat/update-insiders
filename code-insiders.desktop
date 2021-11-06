@@ -2,7 +2,7 @@
 Name=Visual Studio Code Insiders
 Comment=Visual Studio Code Insiders
 Exec=/opt/vscode-insiders/bin/code-insiders
-Icon=vscode-insiders,/opt/vscode-insiders/resources/app/resources/linux/code.png
+Icon=code-insiders,/opt/vscode-insiders/resources/app/resources/linux/code.png
 Terminal=false
 Type=Application
 Categories=Development;
