@@ -39,17 +39,20 @@ if [ $quiet == 'true' ]; then
   fi
   if [[ -d "/usr/share/vscode-insiders" ]]; then
       sudo rm -r /usr/share/vscode-insiders
-      sudo mkdir /usr/share/vscode-insiders
+  fi
+  if [[ -d "/opt/vscode-insiders" ]]; then
+      sudo rm -r /opt/vscode-insiders
+      sudo mkdir /opt/vscode-insiders
   else
-      sudo mkdir /usr/share/vscode-insiders
+      sudo mkdir /opt/vscode-insiders
   fi
   wget -nv 'https://code.visualstudio.com/sha/download?build=insider&os=linux-x64' -O /tmp/vscode-insiders.tar.gz
-  sudo tar xf /tmp/vscode-insiders.tar.gz -C /usr/share/vscode-insiders/ --strip-components 1
+  sudo tar xf /tmp/vscode-insiders.tar.gz -C /opt/vscode-insiders/ --strip-components 1
   if [[ -f "/usr/share/applications/code-insiders.desktop" ]]; then
       sudo rm -r /usr/share/applications/code-insiders.desktop
   fi
   sudo cp ./code-insiders.desktop /usr/share/applications/code-insiders.desktop
-  grep -Fxq "alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders" ~/.bashrc
+  grep -Fxq "alias code-insiders=/opt/vscode-insiders/bin/code-insiders" ~/.bashrc
   if [ $? -eq 1 ]; then
       source ~/.bashrc
   fi
@@ -117,28 +120,32 @@ else
   if [[ -d "/usr/share/vscode-insiders" ]]; then
       echo "# sudo rm -r /usr/share/vscode-insiders"
       sudo rm -r /usr/share/vscode-insiders
-      echo "# mkdir /usr/share/vscode-insiders"
-      sudo mkdir /usr/share/vscode-insiders
+  fi
+  if [[ -d "/opt/vscode-insiders" ]]; then
+      echo "# sudo rm -r /opt/vscode-insiders"
+      sudo rm -r /opt/vscode-insiders
+      echo "# mkdir /opt/vscode-insiders"
+      sudo mkdir /opt/vscode-insiders
   else
-      echo "# mkdir /usr/share/vscode-insiders"
-      sudo mkdir /usr/share/vscode-insiders
+      echo "# mkdir /opt/vscode-insiders"
+      sudo mkdir /opt/vscode-insiders
   fi
   echo "$ wget -nv 'https://code.visualstudio.com/sha/download?build=insider&os=linux-x64' -O /tmp/vscode-insiders.tar.gz"
   wget -nv 'https://code.visualstudio.com/sha/download?build=insider&os=linux-x64' -O /tmp/vscode-insiders.tar.gz
-  echo "# tar xf /tmp/vscode-insiders.tar.gz -C /usr/share/vscode-insiders/  --strip-components 1"
-  sudo tar xf /tmp/vscode-insiders.tar.gz -C /usr/share/vscode-insiders/ --strip-components 1
+  echo "# tar xf /tmp/vscode-insiders.tar.gz -C /opt/vscode-insiders/  --strip-components 1"
+  sudo tar xf /tmp/vscode-insiders.tar.gz -C /opt/vscode-insiders/ --strip-components 1
   if [[ -f "/usr/share/applications/code-insiders.desktop" ]]; then
       echo "# rm -r /usr/share/applications/code-insiders.desktop"
       sudo rm -r /usr/share/applications/code-insiders.desktop
   fi
   echo "# cp ./code-insiders.desktop /usr/share/applications/code-insiders.desktop"
   sudo cp ./code-insiders.desktop /usr/share/applications/code-insiders.desktop
-  echo '$ grep -Fxq "alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders" ~/.bashrc'
-  grep -Fxq "alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders" ~/.bashrc
+  echo '$ grep -Fxq "alias code-insiders=/opt/vscode-insiders/bin/code-insiders" ~/.bashrc'
+  grep -Fxq "alias code-insiders=/opt/vscode-insiders/bin/code-insiders" ~/.bashrc
   if [ $? -eq 1 ]; then
       echo -e "${BLUE}Alias not created, creating now...${NC}"
-      echo "$ echo 'alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders' >> ~/.bashrc"
-      echo 'alias code-insiders=/usr/share/vscode-insiders/bin/code-insiders' >> ~/.bashrc
+      echo "$ echo 'alias code-insiders=/opt/vscode-insiders/bin/code-insiders' >> ~/.bashrc"
+      echo 'alias code-insiders=/opt/vscode-insiders/bin/code-insiders' >> ~/.bashrc
       echo '$ source ~/.bashrc'
       source ~/.bashrc
   else
